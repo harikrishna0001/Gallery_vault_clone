@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/usersignup.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="master">
+
+        <div class="login">
+            <h1>Mygramchat</h1>
+            <form action="{% url 'newpost' %}" method="post" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <label for="feedimage">choose  image</label>
+                <br>
+                <input type="file" name="feedimage" id="feedimage">
+                <br>
+                <input type="submit" value="POST" style="margin-top: 2%; border:none; background-color: rgb(83, 83, 243); width:50px; height:30px; border-radius:2%;">
+           </form>
+        </div>
+    </div>
+</body>
+</html>

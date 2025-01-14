@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .master {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 30%;
+        }
+        .master img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="master">
+        {% if feeds %}
+            {% for i in feeds %}
+                <img src="{{ i.feedimage.url }}" alt="Gallery image" loading="lazy" style="margin-top: 100px;">
+                <div>
+                    <a href="{% url 'index' %}"><button style="border: none; background-color:darkblue; border-radius:5px; color:white">Back to Gallery</button></a>
+                </div>
+                <div>
+                    <a href="{% url 'delete_image' i.pk  %}"><button style="border: none; background-color:red; border-radius:5px; color:white">delete</button></a>
+                   </div>
+            {% endfor %}
+        {% else %}
+            <p>No images available.</p>
+        {% endif %}
+        
+       
+        
+    </div>
+</body>
+</html>

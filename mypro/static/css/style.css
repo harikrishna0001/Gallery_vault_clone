@@ -1,0 +1,76 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+/* Left side: Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Center: Nav name */
+.nav-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Right side: Add button */
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+/* Desktop and larger screens */
+@media screen and (min-width: 701px) {
+    .navbar {
+        flex-direction: row; /* Keep items horizontally aligned */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .add-button {
+        margin-left: 20px; /* Space between the logo and button */
+    }
+}
+
+/* Mobile / Smaller screens */
+@media screen and (max-width: 700px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        width: 100%; /* Make the navbar take the full width */
+    }
+
+    .add-button {
+        width: 100%; /* Make the button full-width on small screens */
+        margin-top: 10px;
+    }
+}

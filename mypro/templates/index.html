@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+</head>
+<body>
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <!-- Left: Logo -->
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo" width="40" height="40"> <!-- Replace with your logo image -->
+        </div>
+        
+        <!-- Center: Nav Name -->
+        <div class="nav-name">
+            Gallery Vault
+        </div>
+        
+        <!-- Right: Add Button -->
+        <div>
+            <button class="add-button">Add Photo</button>
+        </div>
+    </nav>
+    <center><br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        
+  
+  {% for i in feed %}
+  <img src="{{ i.images.url }}" alt="image"> 
+  <a class="" href="{% url 'delete' i.id %}">delete</a>
+  {% endfor %}
+  </center>
+
+</body>
+</html>
